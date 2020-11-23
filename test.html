@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function bigSum(a, b){
+				var arra =  new Array();
+				while(a){
+					arra.push(parseInt((a%10)));
+					a=parseInt(a/10);
+				}
+				var arrb =  new Array();
+				while(b){
+					arrb.push(parseInt(b%10));
+					b=parseInt(b/10);
+				}
+				console.log('arra:'+arra);
+				console.log('arrb:'+arrb);
+				var lengthmax = arra.length > arrb.length ? arra.length : arrb.length;
+				var lengthmin = arra.length < arrb.length ? arra.length : arrb.length;
+				
+				if(arra.length < arrb.length){
+					for(var i=lengthmin;i<lengthmax;i++){
+						arra.push(0);
+					}
+				}
+				
+				if(arra.length > arrb.length){
+					for(var i=lengthmin;i<lengthmax;i++){
+						arrb.push(0);
+					}
+				}
+				console.log('arra:'+arra);
+				console.log('arrb:'+arrb);
+				var arrc = new Array();
+				var flag=0;
+				for(var i = 0;i<lengthmax;i++){
+					if(arra[i]+arrb[i]+flag>=10){
+						arrc[i]=(arra[i]+arrb[i]+flag)%10;
+						flag=1;
+					}
+					else{
+						arrc[i]=arra[i]+arrb[i]+flag;
+						flag=0;
+					}
+				}
+				arrc.reverse();
+				var ans=arrc.join('');
+				console.log('ans:'+ans);
+				
+				// return ans;
+				
+			}
+			// bigSum(123456,45612)
+			
+			/* console.log(1+1);
+			console.log(typeof (1+1));
+			console.log(1+'abc');
+			console.log(typeof (1+'abc'));
+			console.log(1+true);
+			console.log(typeof (1+true));
+			console.log(1+undefined);
+			console.log(typeof (1+undefined));
+			console.log(1+null);
+			console.log(typeof (1+null));
+			
+			console.log('————————————————————');
+			
+			console.log('abc'+true);
+			console.log(typeof ('abc'+true));
+			console.log('abc'+undefined);
+			console.log(typeof ('abc'+undefined));
+			console.log('abc'+null);
+			console.log(typeof ('abc'+null));
+			
+			console.log('————————————————————');
+			
+			console.log(true+true);
+			console.log(typeof (true+true));
+			console.log(true+undefined);
+			console.log(typeof (true+undefined));
+			console.log(true+null);
+			console.log(typeof (true+null));
+			
+			console.log('————————————————————');
+			
+			console.log(undefined+undefined);
+			console.log(typeof (undefined+undefined));
+			console.log(undefined+null);
+			console.log(typeof (undefined+null));
+			
+			console.log('————————————————————');
+			
+			console.log(null+null);
+			console.log(typeof (null+null)); */
+			
+			console.log(typeof null);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

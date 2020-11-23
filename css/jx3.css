@@ -1,0 +1,280 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font: 14px/1 Helvetica, Tahoma, Arial, \5b8b\4f53, sans-serif;
+}
+
+p {
+	line-height: 1.5;
+}
+
+a {
+	text-decoration: none;
+	color: #232323;
+}
+
+#body {
+	position: relative;
+}
+
+.bodyBackground {
+	position: absolute;
+	width: 100%;
+	height: 4320px;
+}
+
+.bodyBackground .bg {
+	position: relative;
+	width: 100%;
+	height: 4320px;
+	top: 0;
+	left: 0;
+	margin: 0 auto;
+	background-image: url(../images/bg10.jpg);
+	background-size: auto;
+	background-repeat: no-repeat;
+	background-position: top;
+}
+
+.bodyLogo {
+	position: absolute;
+	left: 100px;
+	top: 100px;
+	width: 100px;
+	height: 100px;
+	background-color: rgba(155, 105, 255, 0.3);
+}
+
+.bodyTitle {
+	position: absolute;
+	left: 400px;
+	top: 250px;
+	width: 500px;
+	height: 300px;
+	background-color: rgba(155, 105, 255, 0.3);
+}
+
+.bodyMusicLogo {
+	position: absolute;
+	right: 30px;
+	top: 30px;
+	width: 50px;
+	height: 50px;
+	z-index: 15;
+	cursor: pointer;
+	background-image: url(../images/yy.png);
+	background-size: contain;
+	background-position: center;
+	/* background: url(../images/yy.png) contain center no-repeat fixed; */
+}
+
+.bodyMusicPlay {
+	-webkit-animation: rotating 2s linear infinite;
+	-moz-animation: rotating 2s linear infinite;
+	-o-animation: rotating 2s linear infinite;
+	animation: rotating 2s linear infinite
+}
+
+@-webkit-keyframes rotating {
+	from {
+		-webkit-transform: rotate(0)
+	}
+
+	to {
+		-webkit-transform: rotate(360deg)
+	}
+}
+
+@keyframes rotating {
+	from {
+		transform: rotate(0)
+	}
+
+	to {
+		transform: rotate(360deg)
+	}
+}
+
+@-moz-keyframes rotating {
+	from {
+		-moz-transform: rotate(0)
+	}
+
+	to {
+		-moz-transform: rotate(360deg)
+	}
+}
+
+@-o-keyframes rotating {
+	from {
+		-o-transform: rotate(0)
+	}
+
+	to {
+		-o-transform: rotate(360deg)
+	}
+}
+
+.bodyNav {
+	position: fixed;
+	right: 20px;
+	top: 50%;
+	margin-top: -220px;
+	width: 80px;
+	height: 100px;
+	z-index: 10;
+}
+
+.bodyNav .nav {
+	position: relative;
+	width: 80px;
+	height: 80px;
+	margin-bottom: 10px;
+	/* 	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top; */
+}
+
+.bodyNav .nav a {
+	display: block;
+	height: 80px;
+}
+
+.bodyNav .nav:hover {
+	cursor: pointer;
+	background-color: rgba(255, 61, 213, 0.5);
+}
+
+.bodyNav .nav1 {
+	background-color: #ff0000;
+}
+
+.bodyNav .nav2 {
+	background-color: #ffff00;
+}
+
+.bodyNav .nav3 {
+	background-color: #00ff00;
+}
+
+.bodyNav .nav4 {
+	background-color: #00ffff;
+}
+
+.bodyNav .nav5 {
+	background-color: #0000ff;
+}
+
+.content {
+	position: absolute;
+	width: 100%;
+	height: 1080px;
+	border-color: #00FFFF;
+	border-bottom-width: 1px;
+	/* border-bottom-style: solid; */
+	z-index: 8;
+}
+
+.first {
+	top: 1080px;
+}
+
+.second {
+	top: 2160px;
+}
+
+.third {
+	top: 3240px;
+}
+
+.firstcontent {
+	position: relative;
+	width: 1280px;
+	height: 980px;
+	margin: 20px auto;
+	/* background-color: rgba(155, 105, 255, 0.3); */
+}
+
+.firsttitle {
+	position: absolute;
+	left: 50%;
+	margin-left: -640px;
+	width: 1280px;
+	height: 120px;
+	/* background-color:  rgba(155, 105, 255, 0.3); */
+	background-position: top;
+	background-repeat: no-repeat;
+	background-size: auto;
+}
+
+.firsttitle1 {
+	background-image: url(../images/jx3/title1.png);
+}
+
+.firsttitle2 {
+	background-image: url(../images/jx3/title2.png);
+}
+
+.firsttitle3 {
+	background-image: url(../images/jx3/title3.png);
+}
+
+.firstgraph {
+	position: absolute;
+	top: 170px;
+	width: 100%;
+	height: 800px;
+	background-color: rgba(155, 105, 255, 0.3);
+}
+
+
+/* 花瓣特效 */
+#snowflake {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+
+.snowRoll {
+	position: absolute;
+	opacity: 0;
+	-webkit-animation-name: mysnow;
+	-webkit-animation-duration: 20s;
+	-moz-animation-name: mysnow;
+	-moz-animation-duration: 20s;
+	height: 80px;
+}
+
+@-webkit-keyframes mysnow {
+	0% {
+		bottom: 100%;
+	}
+
+	50% {
+		-webkit-transform: rotate(1080deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(0deg) translate3d(50px, 50px, 50px);
+	}
+}
+
+@-moz-keyframes mysnow {
+	0% {
+		bottom: 100%;
+	}
+
+	50% {
+		-moz-transform: rotate(1080deg);
+	}
+
+	100% {
+		-moz-transform: rotate(0deg) translate3d(50px, 50px, 50px);
+	}
+}

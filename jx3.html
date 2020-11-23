@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="css/jx3.css" />
+
+	<body>
+		<div id="head">
+
+		</div>
+		<div id="body">
+			<div class="bodyBackground">
+				<!-- 飘花 -->
+				<div id="snowflake"></div>
+				<div class="bg"></div>
+			</div>
+			<div class="bodyMusic">
+				<div class="bodyMusicLogo">
+					<audio class="musicAudio" src="audio/ED.mp3" loop="loop">
+						当前浏览器不支持audio
+					</audio>
+				</div>
+			</div>
+			<div class="bodyNav">
+				<div class="nav nav1"><a href="#shouye">首页</a></div>
+				<div class="nav nav2"><a href="#diyige">第一个</a></div>
+				<div class="nav nav3"><a href="#dierge">第二个</a></div>
+				<div class="nav nav4"><a href="#disange">第三个</a></div>
+				<div class="nav nav5"><a href="#shouye">top</a></div>
+			</div>
+
+			<div id="shouye" class="content">
+			</div>
+			<div id="diyige" class="content first">
+				<div class="firstcontent">
+					<div class="firsttitle firsttitle1"></div>
+					<div class="firstgraph"></div>
+				</div>
+			</div>
+			<div id="dierge" class="content second">
+				<div class="firstcontent">
+					<div class="firsttitle firsttitle2"></div>
+					<div class="firstgraph"></div>
+				</div>
+			</div>
+			<div id="disange" class="content third">
+				<div class="firstcontent">
+					<div class="firsttitle firsttitle3"></div>
+					<div class="firstgraph"></div>
+				</div>
+			</div>
+
+		</div>
+		<div id="footer">
+
+		</div>
+
+		<script src="./js/jx3.js" type="text/javascript" charset="utf-8"></script>
+
+		<!-- 飘花 -->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.transit.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				var snowflakeURl = [
+					'./images/icon_petal_1.png',
+					'./images/icon_petal_2.png',
+					'./images/icon_petal_3.png',
+					'./images/icon_petal_4.png',
+					'./images/icon_petal_5.png',
+					'./images/icon_petal_6.png',
+					'./images/icon_petal_7.png',
+					'./images/icon_petal_8.png'
+				]
+				var container = $(".bodyBackground");
+				visualWidth = container.width();
+				visualHeight = container.height();
+
+				function snowflake() {
+					var $flakeContainer = $('#snowflake');
+
+					function getImagesName() {
+						return snowflakeURl[[Math.floor(Math.random() * 8)]];
+					}
+
+					function createSnowBox() {
+						var url = getImagesName();
+						return $('<div class="snowbox" />').css({
+							'width': 25,
+							'height': 26,
+							'position': 'absolute',
+							'backgroundRepeat': 'no-repeat',
+							'zIndex': 100000,
+							'top': '-41px',
+							'backgroundImage': 'url(' + url + ')'
+						}).addClass('snowRoll');
+					}
+
+					setInterval(function() {
+						var startPositionLeft = Math.random() * visualWidth - 100,
+							startOpacity = 1,
+							endPositionTop = visualHeight - 40,
+							endPositionLeft = startPositionLeft - 100 + Math.random() * 500,
+							duration = visualHeight * 10 + Math.random() * 5000;
+
+						var randomStart = Math.random();
+						randomStart = randomStart < 0.5 ? startOpacity : randomStart;
+
+						var $flake = createSnowBox();
+						$flake.css({
+							left: startPositionLeft,
+							opacity: randomStart
+						});
+						$flakeContainer.append($flake);
+						$flake.transition({
+							top: endPositionTop,
+							left: endPositionLeft,
+							opacity: 0.7
+						}, duration, 'ease-out', function() {
+							$(this).remove()
+						});
+					}, 500);
+				}
+				snowflake();
+
+			})
+		</script>
+
+	</body>
+</html>

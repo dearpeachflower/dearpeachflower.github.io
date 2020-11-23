@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Generator" content="EditPlus®">
+		<meta name="Author" content="">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<title>相见欢</title>
+		<style>
+			html{
+				margin:0;
+				padding:0;
+				width:100%;
+				height:auto;
+			}
+
+			body{
+				width:100%;
+				margin:0;
+				padding:0;
+				border: 0;
+				height:auto;
+
+				overflow: hidden;
+			}
+
+			.bg{
+				width: 100%;
+				height: 917px;
+				background-size: 100%;
+				position: relative;
+				z-index: 0;
+				background:url('images/bg1.jpg') center center no-repeat;
+			}
+
+			.xjh{
+				width:100px;
+				height:100px;
+				margin:100px auto;
+				background-image:url('images/1.jpg');
+				background-position: 10px -10px; /* 图片移动像素 */
+			}
+
+			.xjh:before{
+				display:block; /* 盒子能设置宽度高度 */
+				width:100px;
+				height:100px;
+				margin:100px auto;
+				background-image:url('images/1.jpg');
+				background-position: 10px -10px; /* 图片移动像素 */
+				content:''; /* 激活伪元素 */
+			}
+
+			.xjh:hover:before{
+				animation: donghua_xjh 2s infinite;
+			}
+
+			@keyframes donghua_xjh{
+				from{
+					transform:scale(1);
+					opacity:1;
+				}
+				to{
+					 transform:scale(1.5); /* 形变，放大 */
+					 opacity:0;
+				}
+			}
+
+			.btnbox{
+				width:56px;
+				height:208px;
+				/*margin:160px 384px;*/
+				background:rgb(250,228,228);
+				display: block;
+				margin: 0 auto;
+			}
+
+		</style>
+	</head>
+
+
+	<body>
+	<div class='bg'>
+		<!--<div class='btnbox' style='margin:160px 384px;'></div>
+		<div class='btnbox' style='margin:130px 500px;'></div>
+		<audio controls="controls" autoplay="autoplay" preload="auto" loop="loop">
+			<source src="audio/ED.mp3" type="audio/mp3"/>
+		</audio>-->
+	</div>
+
+	
+	</body>
+</html>
